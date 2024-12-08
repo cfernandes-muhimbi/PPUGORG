@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PPUG Podcast</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #2a9d8f;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .podcast-slide {
+      width: 900px;
+      height: 500px;
+      background-color: #2a9d8f;
+      border-radius: 12px;
+      padding: 20px;
+      position: relative;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .header svg {
+      width: 24px;
+      height: 24px;
+    }
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    .description {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 500px;
+      margin-top: 20px;
+    }
+    .description h3 {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .description p {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    .speaker {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .speaker img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 4px solid white;
+      margin-bottom: 10px;
+    }
+    .host {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .host img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 2px solid white;
+    }
+    .sponsored {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<div class="podcast-slide">
+  <!-- Header -->
+  <div class="header">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+      <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path>
+      <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+      <line x1="12" x2="12" y1="19" y2="22"></line>
+    </svg>
+    PPUG Podcast
+  </div>
+
+  <!-- Main Content -->
+  <div class="content">
+    <!-- Description -->
+    <div class="description">
+      <h3>Power Platform Innovator</h3>
+      <p>
+        Sarah is a renowned Power Platform expert with over 10 years of experience 
+        in digital transformation. She specializes in creating innovative solutions 
+        that streamline business processes using Microsoft's Power Platform.
+      </p>
+    </div>
+  </div>
+
+  <!-- Speaker Section -->
+  <div class="speaker">
+    <img src="https://via.placeholder.com/200" alt="Speaker">
+    <div>Sarah Johnson</div>
+  </div>
+
+  <!-- Host Section -->
+  <div class="host">
+    <span>Host:</span>
+    <img src="https://via.placeholder.com/100" alt="Host">
+    <span>Mike Rodriguez</span>
+  </div>
+
+  <!-- Sponsored Section -->
+  <div class="sponsored">Sponsored by Nutrient</div>
+</div>
+
+</body>
+</html>

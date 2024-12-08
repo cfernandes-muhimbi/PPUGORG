@@ -5,57 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PPUG.ORG - Power Platform User Group</title>
     <style>
-        * YouTube Video Card Styles */
-        .video-card {
-            width: 400px;
-            background-color: #ffffff;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
+        #horizontal-videos .videos-container {
+    display: flex;
+    gap: 1.5rem; /* Space between video cards */
+    justify-content: center; /* Center content horizontally */
+    flex-wrap: wrap; /* Allow wrapping for small screens */
+    padding: 1rem;
+}
 
-        .video-card:hover {
-            transform: scale(1.02);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
+#horizontal-videos .video-card {
+    flex: 1 1 calc(50% - 1rem); /* Two videos per row */
+    max-width: 48%; /* Ensure proper width */
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
 
-        .video-card iframe {
-            width: 100%;
-            height: 225px;
-            border: none;
-        }
+#horizontal-videos .video-card iframe {
+    width: 100%; /* Full width of the card */
+    height: 200px; /* Fixed height */
+    border: none;
+}
 
-        .video-card .card-content {
-            padding: 1rem;
-        }
+#horizontal-videos .card-content {
+    padding: 1rem;
+    text-align: center;
+}
 
-        .video-card h3 {
-            font-size: 1.5rem;
-            color: #264653;
-            margin-bottom: 0.5rem;
-        }
+#horizontal-videos .card-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #264653;
+}
 
-        .video-card p {
-            font-size: 1rem;
-            color: #6c757d;
-            margin-bottom: 1rem;
-        }
+#horizontal-videos .card-content p {
+    font-size: 1rem;
+    color: #6c757d;
+}
 
-        .video-card a {
-            text-decoration: none;
-            color: #ffffff;
-            background-color: #2a9d8f;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            font-size: 0.9rem;
-            transition: background-color 0.2s ease;
-        }
-
-        .video-card a:hover {
-            background-color: #264653;
-        }
+@media (max-width: 768px) {
+    #horizontal-videos .video-card {
+        flex: 1 1 100%; /* Stack videos vertically on small screens */
+    }
+}
         * {
             margin: 0;
             padding: 0;
@@ -346,7 +341,10 @@
 <body>
     <nav class="nav-header">
         <div class="nav-container">
-            <a href="#" class="nav-logo">PPUG</a>
+            <a href="#" class="nav-logo">
+                <!-- <img src="https://clavinfernandes.wordpress.com/wp-content/uploads/2024/12/image-20241208-172028.png" alt="PPUG Logo"> -->
+                PPUG
+            </a>
             <button class="mobile-menu-btn">☰</button>
             <ul class="nav-links">
                 <li><a href="#about">About Us</a></li>
@@ -416,23 +414,33 @@
             </div>
         </div>
     </section>
-    <section id="videos">
-      <div class="video-card">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/z10Escu_EM8?si=yIWo5c2Mo4arH89E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </iframe>
-            <div class="card-content">
-                <h3>Power Platform Basics</h3>
-                <p>Latest Tutorial - </p>
-                <a href="https://www.youtube.com/@clavinfernandes8566" target="_blank">More Videos</a>
+    <section id="horizontal-videos">
+        <div class="videos-container">
+            <!-- Video 1 -->
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/0mS8Bz7IvNo" 
+                    title="PnP PowerShell November 2024 Update"
+                    allowfullscreen>
+                </iframe>
+                <div class="card-content">
+                    <h3>PnP PowerShell November 2024 Update</h3>
+                    <p>Master Microsoft 365 & SharePoint Management</p>
+                </div>
             </div>
-        </div>
-
-    </div>
-
-
+            <!-- Video 2 -->
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/DQmNeQua5Ug" 
+                    title="Power Automate HTML to PDF Conversion Tips"
+                    allowfullscreen>
+                </iframe>
+                <div class="card-content">
+                    <h3>Power Automate HTML to PDF Conversion Tips</h3>
+                    <p>Learn how to use ChatGPT for efficient workflows.</p>
+                </div>
             </div>
         </div>
     </section>
+    
 
     <section id="featured-speakers">
         <div class="section-content">
