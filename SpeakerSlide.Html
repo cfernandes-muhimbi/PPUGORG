@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PPUG Podcast</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .podcast-slide {
+      width: 900px;
+      height: 500px;
+      background-color: #e5efe1; /* Slide background */
+      border-radius: 12px;
+      padding: 20px;
+      position: relative;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #2f5233; /* Header text color from palette */
+    }
+    .header svg {
+      width: 24px;
+      height: 24px;
+    }
+        .header img {
+      width: 80px; /* Adjust the size */
+      height: auto; /* Maintain aspect ratio */
+      border-radius: 8px; /* Optional: Add rounded corners */
+    }
+    .content {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+    .speaker-card {
+      width: 45%;
+      background: #2a9d8f; /* Speaker card background */
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      color: #FFFFFF; /* Speaker card text color */
+    }
+    .speaker-card img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 4px solid #2a9d8f; /* Border for speaker image */
+      margin-bottom: 15px;
+    }
+    .speaker-card h3 {
+      font-size: 20px;
+      margin: 10px 0;
+    }
+    .footer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+    }
+    
+    .sponsored {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #2a9d8f; /* Sponsored background */
+      padding: 10px 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+    .sponsored img {
+      width: 100px;
+      height: auto;
+    }
+    .sponsored span {
+      font-size: 16px;
+      font-weight: bold;
+      color: #2a9d8f; /* Sponsored text color */
+    }
+  </style>
+</head>
+<body>
+
+<div class="podcast-slide">
+  <!-- Header -->
+  <div class="header">
+      <img src="https://clavinfernandes.wordpress.com/wp-content/uploads/2024/11/tree.png" alt="Nutrient Logo">
+    PPUG Podcast
+  </div>
+
+  <!-- Content -->
+  <div class="content">
+    <!-- Speaker 1 -->
+    <div class="speaker-card">
+      <img src="https://via.placeholder.com/150" alt="Speaker 1">
+      <h3>Sarah Johnson</h3>
+      <h4>Power Automate Desktop RPA</h4>
+    </div>
+
+    <!-- Speaker 2 -->
+    <div class="speaker-card">
+      <img src="https://via.placeholder.com/150" alt="Speaker 2">
+      <h3>John Doe</h3>
+      <h4>Power Automate Desktop RPA</h4>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="sponsored">
+      <img src="https://clavinfernandes.wordpress.com/wp-content/uploads/2024/12/general_logo_nutrient-black-transparent-removebg-preview.png" alt="Nutrient Logo">
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
