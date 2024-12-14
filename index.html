@@ -4,352 +4,282 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PPUG.ORG - Power Platform User Group</title>
-    <style>
-        #horizontal-videos .videos-container {
-    display: flex;
-    gap: 1.5rem; /* Space between video cards */
-    justify-content: center; /* Center content horizontally */
-    flex-wrap: wrap; /* Allow wrapping for small screens */
-    padding: 1rem;
-}
-
-#horizontal-videos .video-card {
-    flex: 1 1 calc(50% - 1rem); /* Two videos per row */
-    max-width: 48%; /* Ensure proper width */
-    background-color: #ffffff;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-#horizontal-videos .video-card iframe {
-    width: 100%; /* Full width of the card */
-    height: 200px; /* Fixed height */
-    border: none;
-}
-
-#horizontal-videos .card-content {
-    padding: 1rem;
-    text-align: center;
-}
-
-#horizontal-videos .card-content h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-    color: #264653;
-}
-
-#horizontal-videos .card-content p {
-    font-size: 1rem;
-    color: #6c757d;
-}
-
-@media (max-width: 768px) {
-    #horizontal-videos .video-card {
-        flex: 1 1 100%; /* Stack videos vertically on small screens */
-    }
-}
+        <style>
+        /* General Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: Arial, sans-serif;
         }
-
-        .small-image {
-            width: 10px;
-            height: 10px;
-        }
         body {
             line-height: 1.6;
-            background-color: #f8f9fa;
-            color: #264653;
+            background-color: #342c2a;
+            color: #E3E3E3;
+        }
+        section {
+            width: 100%;
+            padding: 4rem 2rem;
+        }
+        .section-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
         }
 
+        /* Navigation Bar */
         .nav-header {
-            background-color: #264653;
+            background-color: #242424;
             position: sticky;
             top: 0;
             z-index: 1000;
             width: 100%;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
         }
-
         .nav-container {
-            width: 100%;
-            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 1rem 2rem;
         }
-
         .nav-logo {
-            color: #f4a261;
-            text-decoration: none;
-            font-size: 1.5rem;
-            font-weight: bold;
+            display: flex;
+            align-items: center;
         }
-
+        .nav-logo img {
+            max-height: 50px;
+        }
         .nav-links {
             display: flex;
             gap: 2rem;
-            list-style: none;
         }
-
         .nav-links a {
-            color: #e9c46a;
+            color: #E3E3E3;
             text-decoration: none;
             padding: 0.5rem 1rem;
             border-radius: 4px;
-            transition: all 0.2s ease;
+            transition: all 0.2s;
         }
-
         .nav-links a:hover {
-            color: #ffffff;
-            background-color: #2a9d8f;
+            background-color: #21664E;
+            color: #FFFFFF;
         }
 
-        section {
-            width: 100%;
-            padding: 4rem 2rem;
-            background-color: #ffffff;
-            margin-bottom: 0;
-            border-radius: 0;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        section:nth-child(even) {
-            background-color: #f8f9fa;
-        }
-
-        .section-content {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        h1, h2 {
-            color: #2a9d8f;
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-
-        .hero-section {
-            background: linear-gradient(135deg, #264653, #2a9d8f);
-            color: #ffffff;
-            padding: 4rem 2rem;
-            width: 100%;
-            margin: 0;
-            border-radius: 0;
-        }
-
-        .hero-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            max-width: 1400px;
-            margin: 0 auto;
-            gap: 2rem;
-        }
-
-        .hero-text {
-            flex: 1;
-            max-width: none;
-        }
-
-        .hero-text h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: #ffffff;
-            text-align: left;
-        }
-
-        .hero-text h2 {
-            color: #ffffff;
-            text-align: left;
-        }
-
-        .hero-text p {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-            color: #ffffff;
-        }
-
-        .hero-image {
-            flex: 1;
-            border-radius: 16px;
-            overflow: hidden;
-        }
-
-        .hero-image img {
-            width: 100%;
+        /* About Section */
+        #about img {
+            max-width: 120%;
             height: auto;
-            display: block;
-            border-radius: 16px;
-        }
-
-        .events-grid, .speakers-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .event-card, .speaker-card {
-            background: #ffffff;
-            padding: 1.5rem;
             border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1rem;
+        }
+	
+.join-us-btn {
+    display: inline-block;
+    padding: 1.00rem 1.35rem;
+    background-color: #21664E; /* Green background */
+    color: #FFFFFF; /* White text */
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    position: absolute; /* Allows you to move the button within the container */
+    bottom: 20px; /* Position from the bottom */
+}
+
+.join-us-btn:hover {
+    background-color: #1C4F3C; /* Darker green on hover */
+}
+
+.section-divider {
+    width: 80%; /* Adjust width to suit the design */
+    margin: 2rem auto; /* Center the divider and add spacing */
+    border: none;
+    border-top: 2px solid #7E848C; /* Neutral gray color */
+    opacity: 0.5; /* Slightly transparent */
+}
+
+        /* Sponsor Section */
+        .sponsor-card {
+            background-color: #363636;
+            color: #FFFFFF;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
             text-align: center;
-            transition: transform 0.2s ease;
-            border: 1px solid #e9c46a;
-        }
-
-        .event-card:hover, .speaker-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            border-color: #f4a261;
-        }
-
-        .event-card img, .speaker-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 4px;
-        }
-
-        .speaker-card img {
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
+            max-width: 100%;
             margin: 0 auto;
-            border: 4px solid #2a9d8f;
         }
-
-        .speak-button {
-            display: block;
-            background-color: #e76f51;
-            color: white;
-            padding: 1rem 2rem;
-            text-decoration: none;
-            border-radius: 4px;
-            margin: 2rem auto 0;
-            max-width: 200px;
-            text-align: center;
-            transition: background-color 0.2s ease;
-        }
-
-        .speak-button:hover {
-            background-color: #f4a261;
-        }
-
-        .videos-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .video-thumbnail {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 4px;
-            border: 2px solid #2a9d8f;
-            transition: transform 0.2s ease;
-        }
-
-        .video-thumbnail:hover {
-            transform: scale(1.02);
-            border-color: #e76f51;
-        }
-
-        .footer {
-            background-color: #264653;
-            color: #ffffff;
-            padding: 2rem;
-            text-align: center;
-            width: 100%;
-        }
-
-        .learn-more-button {
-            display: inline-block;
-            background-color: #e76f51;
-            color: #ffffff;
-            padding: 0.75rem 1.5rem;
-            border-radius: 4px;
-            text-decoration: none;
-            transition: background-color 0.3s;
-        }
-
-        .learn-more-button:hover {
-            background-color: #f4a261;
-        }
-
-        .sponsor {
-            text-align: center;
-            margin-top: 2rem;
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: #e9c46a;
-            font-size: 1.5rem;
+        .sponsor-card img {
+            max-width: 100%;
+            border-radius: 8px;
             cursor: pointer;
         }
 
-        @media (max-width: 768px) {
-            .mobile-menu-btn {
-                display: block;
-            }
+        /* Event Section */
+.events-section {
+    width: 100%; /* Full width */
+    padding: 4rem 0;
+    background-color: #342c2a; /* Soft beige background */
+    margin: 0;
+    text-align: center;
+}
 
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background-color: #264653;
-                flex-direction: column;
-                padding: 1rem;
-                gap: 1rem;
-                text-align: center;
-            }
+.event-card {
+    width: 100%; /* Full width for each card */
+    max-width: none; /* Remove any maximum width restrictions */
+    margin: 1rem 0; /* Spacing between cards */
+    padding: 2rem;
+    background-color: #342c2a; /* White background for each card */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
 
-            .nav-links.active {
-                display: flex;
-            }
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
 
-            .hero-content {
-                flex-direction: column;
-            }
+.event-card h3 {
+    font-size: 1.5rem;
+    color: #A23E48; /* Accent red */
+    margin-top: 1rem;
+}
 
-            .hero-text, .hero-image {
-                max-width: 100%;
-            }
+.event-card p {
+    font-size: 1rem;
+    color: #7E848C; /* Neutral gray */
+}
 
-            section {
-                padding: 2rem 1rem;
-            }
+/* Image Styling */
+.event-image {
+    width: 100%; /* Full width of the card */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Match card corners */
+    transition: transform 0.3s ease;
+}
+
+.event-card a {
+    text-decoration: none; /* Remove underline from clickable image */
+}
+
+.event-card a:hover .event-image {
+    transform: scale(1.05); /* Zoom effect on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .event-card {
+        width: 100%;
+        max-width: none;
+    }
+}
+
+
+
+/* For Mobile Devices */
+@media (max-width: 768px) {
+    .event-card {
+        width: 100%;
+        max-width: none;
+    }
+}
+
+
+        /* Speaker Section */
+        .speakers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .speaker-card {
+            background-color: #363636;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+            text-align: center;
+        }
+        .speaker-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+        }
+
+        /* Speak Section */
+        .speak-btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: #21664E;
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .speak-btn:hover {
+            background-color: #242424;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #242424;
+            color: #E3E3E3;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        /* Video Section */
+        .videos-container {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 1rem;
+        }
+        .video-card {
+            flex: 1 1 calc(50% - 1rem);
+            max-width: 48%;
+            background-color: #363636;
+            border: 1px solid #21664E;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .video-card iframe {
+            width: 100%;
+            height: 200px;
+            border: none;
+        }
+        .card-content {
+            padding: 1rem;
+            text-align: center;
+            color: #E3E3E3;
+        }
+        .card-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        .card-content p {
+            font-size: 1rem;
         }
     </style>
 </head>
 <body>
     <nav class="nav-header">
         <div class="nav-container">
-            <a href="#" class="nav-logo">
-                <!-- <img src="https://clavinfernandes.wordpress.com/wp-content/uploads/2024/12/image-20241208-172028.png" alt="PPUG Logo"> -->
-                PPUG
-            </a>
-            <button class="mobile-menu-btn">☰</button>
+		<h2>PPUG</h2>
             <ul class="nav-links">
                 <li><a href="#about">About Us</a></li>
-                <li><a href="#events">Events</a></li>
                 <li><a href="#sponsor">Sponsor</a></li>
+                <li><a href="#event">Event</a></li>
                 <li><a href="#featured-speakers">Speakers</a></li>
                 <li><a href="#horizontal-videos">Videos</a></li>
                 <li><a href="#speak">Speak</a></li>
@@ -357,29 +287,49 @@
         </div>
     </nav>
 
-    <section id="about" class="hero-section">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1>Power Platform and AI User Group</h1>
-                <h2>Welcome</h2>
-                <p>Are you eager to learn more about Microsoft Power Platform? Whether you're a seasoned pro or just getting started, our user group is the perfect place to expand your skills, share knowledge, and collaborate with like-minded individuals. We explore exciting new developments, share experiences, and work together to harness the full potential of these powerful tools. <b>Come and be a part of our community! Let's grow, learn, and build together!</b></p>
-                <a href="https://community.powerplatform.com/usergroups/details/?groupid=0e27c208-078b-ef11-ac21-6045bdd6e4e4" class="learn-more-button">Join Us →</a>
-            </div>
-            <div class="hero-image">
-                <img src="https://clavinfernandes.wordpress.com/wp-content/uploads/2024/11/tree.png" alt="Event image">
-            </div>
+    <section id="about">
+        <div class="section-content">
+            <img src="https://clavinfernandes.wordpress.com/wp-content/uploads/2024/12/ppug_1920x1080_brand.png" alt="About Us">
+            <a href="https://community.powerplatform.com/usergroups/details/?groupid=0e27c208-078b-ef11-ac21-6045bdd6e4e4" class="join-us-btn">Join Us</a>
         </div>
     </section>
 
-    <section id="events">
+<hr class="section-divider">
+      <section id="featured-speakers">
         <div class="section-content">
-            <div class="events-grid">
-    <div class="event-card">
-        <div class="event-card">
-            <img src="https://clavinfernandes.wordpress.com/wp-content/uploads/2024/12/clavinnived-1.png" alt="Photo" style="width: 100%; height: 100%; object-fit: cover;">
-           <p></p>
-       </div>
-      </section>
+            <h2>Featured Speakers</h2>
+		<p>
+		</p>
+            <div class="speakers-grid">
+                <div class="speaker-card">
+                    <div class="badge">
+                        <img src="https://clavinfernandes.wordpress.com/wp-content/uploads/2024/12/whatsapp-image-2024-12-12-at-13.23.16.jpeg" alt="Photo">
+                        <div class="badge-title">Nived N</div>
+                        <div class="badge-description">
+                            Nived is a RPA Developer | Power Platform SuperUser | UiPath | Robocorp | Power Automate | Opensource RPA explorer | Machine Learning | Google Associate Cloud Engineer Certified
+                        </div>
+                    </div>
+                </div>
+                <div class="speaker-card">
+                    <div class="badge">
+                        <img src="https://clavinfernandes.wordpress.com/wp-content/uploads/2024/12/1664179759874-1.jpg" alt="Photo">
+                        <div class="badge-title">Clavin Fernandes</div>
+                        <div class="badge-description">
+                            Clavin Fernandes is a Microsoft Business Applications MVP | Solutions Engineer at Nutrient | Power Automate Super User | Blogger | Speaker
+                        </div>
+                    </div>
+                </div>
+                <div class="speaker-card">
+                    <p>Coming Soon</p>
+                </div>
+                <div class="speaker-card">
+                    <p>Coming Soon</p>
+                </div>
+            </div>
+        </div>
+    </section>
+<hr class="section-divider">
+
     <section id="sponsor">
         <div class="section-content">
             <h2>Sponsor</h2>
@@ -397,62 +347,30 @@
             </div>
         </div>
     </section>
-    <p></p>
-</div>
-      </div>
-        </div>
-    </section>  
-    <section id="featured-speakers">
-        <div class="section-content">
-            <h2>Featured Speakers</h2>
-            <div class="speakers-grid">
-                <div class="speaker-card">
-                    <div class="badge">
-                        <img src="https://clavinfernandes.wordpress.com/wp-content/uploads/2024/12/whatsapp-image-2024-12-12-at-13.23.16.jpeg" alt="Photo">
-                        <div class="badge-title">Nived N</div>
-                        <div class="badge-description">
-                          Nived is a RPA Developer | Power Platform SuperUser | UiPath | Robocorp | Power Automate | 
-                          Opensource RPA explorer | Machine Learning | Google Associate Cloud Engineer Certified
-                        </div>
-                      </div>
-                </div>
-                <div class="speaker-card">
-                    <div class="badge">
-                        <img src="https://clavinfernandes.wordpress.com/wp-content/uploads/2024/12/1664179759874-1.jpg" alt="Photo">
-                        <div class="badge-title">Clavin Fernandes</div>
-                        <div class="badge-description">
-                          Clavin Fernandes is a Microsoft Business Applications MVP | Solutions Engineer at Nutrient | Power Automate Super User | Blogger | Speaker
-                        </div>
-                      </div>
-                </div>
-                <div class="speaker-card">
-                    <p>Coming Soon</p>
-                </div>
-		<div class="speaker-card">
-                    <p>Coming Soon</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<hr class="section-divider">
+
+<section id="events" class="events-section">
+    <h2>Upcoming Events</h2>
+    <div class="event-card">
+        <a href="" target="_blank">
+            <img src="https://clavinfernandes.wordpress.com/wp-content/uploads/2024/12/nivedn.png" alt="Event 1 Image" class="event-image">
+        </a>
+    </div>
+</section>
+
+
+ 
     <section id="horizontal-videos">
         <div class="videos-container">
-            <!-- Video 1 -->
             <div class="video-card">
-                <iframe src="https://www.youtube.com/embed/0mS8Bz7IvNo" 
-                    title="PnP PowerShell November 2024 Update"
-                    allowfullscreen>
-                </iframe>
+                <iframe src="https://www.youtube.com/embed/0mS8Bz7IvNo" title="PnP PowerShell November 2024 Update" allowfullscreen></iframe>
                 <div class="card-content">
                     <h3>PnP PowerShell November 2024 Update</h3>
                     <p>Master Microsoft 365 & SharePoint Management</p>
                 </div>
             </div>
-            <!-- Video 2 -->
             <div class="video-card">
-                <iframe src="https://www.youtube.com/embed/DQmNeQua5Ug" 
-                    title="Power Automate HTML to PDF Conversion Tips"
-                    allowfullscreen>
-                </iframe>
+                <iframe src="https://www.youtube.com/embed/DQmNeQua5Ug" title="Power Automate HTML to PDF Conversion Tips" allowfullscreen></iframe>
                 <div class="card-content">
                     <h3>Power Automate HTML to PDF Conversion Tips</h3>
                     <p>Learn how to use ChatGPT for efficient workflows.</p>
@@ -460,48 +378,24 @@
             </div>
         </div>
     </section>
+<hr class="section-divider">
     <section id="speak">
         <div class="section-content">
-            <h2>Want to Speak?</h2>
-            <p style="text-align: center;">Share your knowledge and experience with our community!</p>
-            <a href="https://forms.office.com/r/q4ba1Djikn" class="speak-button">Submit Your Talk</a>
+            <h2>Speak</h2>
+            <a href="https://forms.office.com/pages/responsepage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAAcPZhqRURDQwQ044U1E3VDNTM09CTjVMVjZJNlRNSC4u&route=shorturl" class="speak-btn">Submit Your Talk</a>
         </div>
     </section>
+
     <footer class="footer">
-        <p>© 2024 PPUG.ORG - All rights reserved</p>
+        <p>&copy; 2024 PPUG.ORG - All rights reserved</p>
     </footer>
 
     <script>
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileMenu = document.querySelector('.mobile-menu');
         const navLinks = document.querySelector('.nav-links');
 
-        mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.addEventListener('click', () => {
             navLinks.classList.toggle('active');
-        });
-
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                    
-                    navLinks.classList.remove('active');
-                }
-            });
-        });
-
-        let lastScroll = 0;
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            if (currentScroll > lastScroll) {
-                navLinks.classList.remove('active');
-            }
-            lastScroll = currentScroll;
         });
     </script>
 </body>
