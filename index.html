@@ -75,20 +75,36 @@
 	
 .join-us-btn {
     display: inline-block;
-    padding: 1.00rem 1.35rem;
+    padding: 1rem 1.5rem;
     background-color: #21664E; /* Green background */
     color: #FFFFFF; /* White text */
     text-decoration: none;
-    border-radius: 4px;
+    border-radius: 8px;
     font-weight: bold;
-    transition: background-color 0.3s;
-    position: absolute; /* Allows you to move the button within the container */
-    bottom: 20px; /* Position from the bottom */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    position: relative;
+    margin: 1rem auto; /* Center on smaller screens */
 }
 
 .join-us-btn:hover {
-    background-color: #1C4F3C; /* Darker green on hover */
+    background-color: #1C4F3C; /* Darker green */
+    transform: scale(1.05); /* Slight zoom on hover */
 }
+
+.join-us-btn:active {
+    background-color: #1A3F2F; /* Even darker green on click */
+    transform: scale(0.98); /* Slight shrink effect */
+}
+
+/* Mobile-friendly adjustments */
+@media (max-width: 768px) {
+    .join-us-btn {
+        width: 90%; /* Make it full-width with padding */
+        padding: 1rem; /* Larger touch target */
+        text-align: center; /* Center text */
+    }
+}
+
 
 .section-divider {
     width: 80%; /* Adjust width to suit the design */
@@ -313,6 +329,11 @@
     <nav class="nav-header">
         <div class="nav-container">
 		<h2>PPUG</h2>
+ 	    <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <ul class="nav-links">
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#sponsor">Sponsor</a></li>
