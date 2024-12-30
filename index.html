@@ -26,6 +26,12 @@
             margin: 0 auto;
             text-align: center;
         }
+    .section-title {
+        font-size: 24px;
+        font-weight: bold;
+        margin: 20px 0;
+        text-align: center;
+    }
 
         /* Navigation Bar */
         .nav-header {
@@ -323,7 +329,66 @@
         .card-content p {
             font-size: 1rem;
         }
+	        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+        #videoPlayer {
+            width: 100%;
+            max-width: 800px;
+            height: 450px;
+            margin: 20px auto;
+            display: block;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        #playlist {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 10px;
+            gap: 10px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .video-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 200px;
+            cursor: pointer;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .video-item img {
+            width: 100%;
+            height: auto;
+        }
+        .video-item p {
+            margin: 0;
+            padding: 10px;
+            text-align: center;
+            font-size: 14px;
+        }
+        .video-item:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
     </style>
+    <script>
+        function playVideo(videoId) {
+            const player = document.getElementById('videoPlayer');
+            player.src = `https://www.youtube.com/embed/${videoId}`;
+        }
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
 </head>
 <body>
     <nav class="nav-header">
@@ -424,27 +489,38 @@
         </a>
     </div>
 </section>
-
-
- 
-    <section id="horizontal-videos">
-        <div class="videos-container">
-            <div class="video-card">
-                <iframe src="https://www.youtube.com/embed/0mS8Bz7IvNo" title="PnP PowerShell November 2024 Update" allowfullscreen></iframe>
-                <div class="card-content">
-                    <h3>PnP PowerShell November 2024 Update</h3>
-                    <p>Master Microsoft 365 & SharePoint Management</p>
-                </div>
+<section id="horizontal-videos">
+    <h2 class="section-title">Our Videos</h2>
+    <div class="videos-container">
+        <div id="playlist">
+            <div class="video-item">
+                <a href="https://www.youtube.com/watch?v=uzks2TyPh1I" target="_blank">
+                    <img src="https://img.youtube.com/vi/uzks2TyPh1I/0.jpg" alt="Thumbnail 1">
+                    <p>How to Embed SharePoint Images in Excel Automatically</p>
+                </a>
             </div>
-            <div class="video-card">
-                <iframe src="https://www.youtube.com/embed/DQmNeQua5Ug" title="Power Automate HTML to PDF Conversion Tips" allowfullscreen></iframe>
-                <div class="card-content">
-                    <h3>Power Automate HTML to PDF Conversion Tips</h3>
-                    <p>Learn how to use ChatGPT for efficient workflows.</p>
-                </div>
+            <div class="video-item">
+                <a href="https://www.youtube.com/watch?v=0mS8Bz7IvNo" target="_blank">
+                    <img src="https://img.youtube.com/vi/0mS8Bz7IvNo/0.jpg" alt="Thumbnail 2">
+                    <p>PnP PowerShell November 2024 Update: Master Microsoft 365 & SharePoint Management</p>
+                </a>
+            </div>
+            <div class="video-item">
+                <a href="https://www.youtube.com/watch?v=DQmNeQua5Ug" target="_blank">
+                    <img src="https://img.youtube.com/vi/DQmNeQua5Ug/0.jpg" alt="Thumbnail 3">
+                    <p>Power Automate HTML to PDF Conversion Tips with ChatGPT</p>
+                </a>
+            </div>
+            <div class="video-item">
+                <a href="https://www.youtube.com/watch?v=z10Escu_EM8" target="_blank">
+                    <img src="https://img.youtube.com/vi/z10Escu_EM8/0.jpg" alt="Thumbnail 4">
+                    <p>Learn Microsoft SharePoint Basics</p>
+                </a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
 <hr class="section-divider">
     <section id="speak">
         <div class="section-content">
@@ -457,13 +533,5 @@
         <p>&copy; 2024 PPUG.ORG - All rights reserved</p>
     </footer>
 
-    <script>
-        const mobileMenu = document.querySelector('.mobile-menu');
-        const navLinks = document.querySelector('.nav-links');
-
-        mobileMenu.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-    </script>
 </body>
 </html>
