@@ -9,6 +9,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PPUG.ORG - Power Platform User Group</title>
         <style>
+        .podcast-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 900px;
+            padding: 20px;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .podcast {
+            background: #1e1e1e;
+            border-radius: 10px;
+            text-align: center;
+            padding: 15px;
+            box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.1);
+        }
+        .podcast img {
+            width: 100%;
+            max-width: 200px;
+            border-radius: 8px;
+        }
+        .podcast a {
+            display: block;
+            font-size: 16px;
+            text-decoration: none;
+            color: #00aaff;
+            font-weight: bold;
+            margin-top: 10px;
+        }
         /* General Styles */
         * {
             margin: 0;
@@ -429,6 +458,15 @@
 		<p>
 		</p>
             <div class="speakers-grid">
+				<div class="speaker-card">
+                    <div class="badge">
+                        <img src="https://clavinfernandes.wordpress.com/wp-content/uploads/2025/03/profile-pic-1002.png" alt="Photo">
+                        <div class="badge-title">Sunil Kumar</div>
+                        <div class="badge-description">
+                            Low Code Lead & Architect • Licensing Specialist • IT Project Management • Pre-Sales • Power Platform(Power Apps, Power Automate, Power BI, Copilots & Power Pages),
+                        </div>
+                    </div>
+                </div>
 		<div class="speaker-card">
                     <div class="badge">
                         <img src="https://clavinfernandes.wordpress.com/wp-content/uploads/2024/12/pankajk.png" alt="Photo">
@@ -465,6 +503,26 @@
             </div>
         </div>
     </section>
+
+<hr class="section-divider">
+      <section id="PodCast">
+        <div class="section-content">
+            <h2>PodCast</h2>
+	<div class="podcast-container">
+        <div class="podcast">
+            <img src="https://clavinfernandes.wordpress.com/wp-content/uploads/2025/03/ppug_1080x1920_logo.png" alt="Podcast Logo">
+            <a href="https://www.youtube.com/watch?v=vMrOYyPuq_E&list=PLlNMfcMu9Cv4cIcbDKNoYQWXxrHTvsSi7" target="_blank">Podcast - Sunil Kumar</a>
+        </div>
+        <div class="podcast">
+            <img src="https://clavinfernandes.wordpress.com/wp-content/uploads/2025/03/ppug_1080x1920_logo.png" alt="Podcast Logo">
+            <a href="https://www.youtube.com/watch?v=WdcnuapbbpM&list=PLlNMfcMu9Cv4cIcbDKNoYQWXxrHTvsSi7&index=2" target="_blank">Podcast - Pankaj Katkar</a>
+        </div>
+        <div class="podcast">
+            <img src="https://clavinfernandes.wordpress.com/wp-content/uploads/2025/03/ppug_1080x1920_logo.png" alt="Podcast Logo">
+            <a href="https://www.youtube.com/watch?v=-yvfM7OAfcE&list=PLlNMfcMu9Cv4cIcbDKNoYQWXxrHTvsSi7&index=3" target="_blank">Podcast - Nived N</a>
+        </div>
+    </div>
+ </section>
 <hr class="section-divider">
 
     <section id="sponsor">
