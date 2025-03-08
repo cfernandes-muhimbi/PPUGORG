@@ -172,69 +172,46 @@
 
         /* Event Section */
 .events-section {
-    width: 100%; /* Full width */
-    padding: 4rem 0;
-    background-color: #342c2a; /* Soft beige background */
-    margin: 0;
-    text-align: center;
-}
-
-.event-card {
-    width: 100%; /* Full width for each card */
-    max-width: none; /* Remove any maximum width restrictions */
-    margin: 1rem 0; /* Spacing between cards */
-    padding: 2rem;
-    background-color: #342c2a; /* White background for each card */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.event-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
-}
-
-.event-card h3 {
-    font-size: 1.5rem;
-    color: #A23E48; /* Accent red */
-    margin-top: 1rem;
-}
-
-.event-card p {
-    font-size: 1rem;
-    color: #7E848C; /* Neutral gray */
-}
-
-/* Image Styling */
-.event-image {
-    width: 100%; /* Full width of the card */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 8px; /* Match card corners */
-    transition: transform 0.3s ease;
-}
-
-.event-card a {
-    text-decoration: none; /* Remove underline from clickable image */
-}
-
-.event-card a:hover .event-image {
-    transform: scale(1.05); /* Zoom effect on hover */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .event-card {
-        width: 100%;
-        max-width: none;
-    }
-}
+            width: 100%;
+            padding: 4rem 0;
+            background-color: #342c2a;
+            margin: 0;
+            text-align: center;
+        }
+        .event-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+        .event-card {
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .event-card:hover {
+            transform: translateY(-5px);
+        }
+        .event-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        .event-card a {
+            display: block;
+            text-decoration: none;
+        }
+        .event-card a:hover img {
+            transform: scale(1.05);
+        }
 
 /* Mobile Menu */
         .mobile-menu {
@@ -605,15 +582,26 @@
 
 
 <hr class="section-divider">
-
-<section id="events" class="events-section">
-    <h2>Past Events</h2>
-    <div class="event-card">
-        <a href="https://youtu.be/42h1rxmDXZI" >
-            <img src="https://clavinfernandes.wordpress.com/wp-content/uploads/2024/12/ppug-intro-flyer.png" alt="Event 1 Image" class="event-image">
-        </a>
-    </div>
-</section>
+ <section id="events" class="events-section">
+        <h2>Past Events</h2>
+        <div class="event-grid">
+            <div class="event-card">
+                <a href="https://youtu.be/42h1rxmDXZI">
+                    <img src="https://clavinfernandes.wordpress.com/wp-content/uploads/2024/12/ppug-intro-flyer.png" alt="Event 1">
+                </a>
+            </div>
+            <div class="event-card">
+                <a href="https://youtu.be/u3g0iUKeLJ0?si=AU76nO6ULguLuYDF">
+                    <img src="https://clavinfernandes.wordpress.com/wp-content/uploads/2025/03/ppug-slides-template.png" alt="Event 2">
+                </a>
+            </div>
+            <div class="event-card">
+                <a href="https://www.youtube.com/watch?v=ztPV_Jm96BU">
+                    <img src="https://clavinfernandes.wordpress.com/wp-content/uploads/2025/03/clavin_first_frame.png" alt="Event 3">
+                </a>
+            </div>
+        </div>
+    </section>
 <section id="horizontal-videos">
     <h2 class="section-title">Our Videos</h2>
     <div class="videos-container">
